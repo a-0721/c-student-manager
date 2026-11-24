@@ -1,0 +1,12 @@
+# 编译产物
+build/
+*.exe
+*.o
+*.obj
+
+# 运行时生成的二进制数据
+data/*.bin
+
+# 编辑器
+.vscode/
+*.user
