@@ -126,7 +126,7 @@ void save_student(List *list) {
     }
 
     //打开文件
-    FILE *fp = fopen("../data/student.bin","wb");
+    FILE *fp = fopen("data/student.bin","wb");
     if(fp == NULL) {
         perror("file open failed");
         return;
@@ -169,7 +169,7 @@ void auto_save_student(List *list) {
     }
 
     //打开文件
-    FILE *fp = fopen("../data/student.bin","wb");
+    FILE *fp = fopen("data/student.bin","wb");
     if(fp == NULL) {
         perror("file open failed");
         return;
@@ -203,7 +203,7 @@ void auto_save_student(List *list) {
 void read_student(List *list) {
 
     //打开文件
-    FILE *fp = fopen("../data/student.bin","rb");
+    FILE *fp = fopen("data/student.bin","rb");
     if(!fp) {
         perror("file open failed");
         return;

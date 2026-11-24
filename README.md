@@ -59,11 +59,20 @@ gcc -g src/main.c src/student_manager.c -Iinclude -o main.exe
 .\main.exe
 ```
 
-> 注意：保存/读取用的相对路径是 `../data/student.bin`，它取决于**当前工作目录**。
-> 所以程序需要在「上一级目录里有 `data/` 的位置」运行，否则 `fopen` 会失败。
+> 保存/读取用的是相对路径 `data/student.bin`，相对于**当前工作目录**。
+> 在仓库根目录直接运行 `.\main.exe` 即可，`data/` 目录已随仓库一起提交。
 
 仓库里也放了一份已经编译好的 `main.exe`（Windows x64，gcc 14.2.0 编译），
-不方便装编译器时可以直接双击运行；想自己重新编译就用上面的命令，产物同名覆盖即可。
+不方便装编译器时可以直接下载使用；想自己重新编译就用上面的命令，产物同名覆盖即可。
+
+## 下载
+
+不想自己编译的话，直接取现成的：
+
+- 发布页（推荐）：[Releases](https://github.com/a-0721/c-student-manager/releases)
+- 或仓库根目录的 [`main.exe`](main.exe)
+
+下载后放在仓库根目录（或任何 `data/` 的同级目录）运行即可。
 
 ## 各功能的实现要点
 
@@ -94,7 +103,7 @@ gcc -g src/main.c src/student_manager.c -Iinclude -o main.exe
 
 ## 待改进
 
-- 相对路径 `../data/student.bin` 依赖运行目录，换个目录启动就读写失败
+- 路径 `data/student.bin` 依赖运行目录，在别的目录启动会读不到文件
 - 输出表格按**字节**补空格（`%-19s`），中文姓名占 2 列却按 3 字节算，列会错位
 - 姓名用 `scanf("%s")` 读，不能含空格；后续考虑 `fgets`
 - 删除时如果没找到学生，没有给用户任何提示
