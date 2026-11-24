@@ -62,6 +62,9 @@ gcc -g src/main.c src/student_manager.c -Iinclude -o main.exe
 > 注意：保存/读取用的相对路径是 `../data/student.bin`，它取决于**当前工作目录**。
 > 所以程序需要在「上一级目录里有 `data/` 的位置」运行，否则 `fopen` 会失败。
 
+仓库里也放了一份已经编译好的 `main.exe`（Windows x64，gcc 14.2.0 编译），
+不方便装编译器时可以直接双击运行；想自己重新编译就用上面的命令，产物同名覆盖即可。
+
 ## 各功能的实现要点
 
 - `menu()`：打印菜单，交给 `read_int()` 读一个整数返回
